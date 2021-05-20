@@ -12,11 +12,13 @@ import numpy as np
 import requests
 
 
-URL = "https://apis.cbs.gov.il/series/catalog/path"
+# URL = "https://apis.cbs.gov.il/series/catalog/path"
+URL = "https://data.gov.il/api/3/action/datastore_search"
 # PARAMS = {'format': 'json', 'download': 'false', 'id': '20,1,1,null,963', 'name': 'התאונות כל',
 #           'pathDesc': 'null'}
 
 PARAMS = {'format': 'json', 'download': 'false', 'id': '20'}
+PARMAS = {'id': '1'}
 
 # URL2='https://apis.cbs.gov.il/series/catalog/path?id=2,1,1,2,963&format=xml&download=false'
 

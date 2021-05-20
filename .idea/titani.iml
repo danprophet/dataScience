@@ -3,8 +3,11 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.idea/newPip" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/newPip7" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/pythonIterpreter" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/pythonIterpreter1" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.9 (newPip)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.8 (titani)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
