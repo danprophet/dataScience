@@ -92,7 +92,6 @@ for i in range(8):
 
 
 df2 = pd.read_csv("csv_files/all_data_10-19.csv")
-print(df2)
 df2.drop(df2.columns[0], axis='columns', inplace=True)
-print(df2)
 df2.to_csv('csv_files/all_data_10-19.csv', index=False)
+print(df2)
