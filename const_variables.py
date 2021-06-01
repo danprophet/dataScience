@@ -1,6 +1,6 @@
 "This file holds const values for application use"
 
-"proccess_data.py & helper.py"
+"proccess_data.py & process_data_helper.py"
 data_file_path = 'csv_files/all_data_10-19.csv'
 
 drop_columns = ['st_case',
@@ -79,10 +79,24 @@ drop_columns = ['st_case',
                 'cf3',
                 'cf3name']  # list of columns to omit from the csv data retrieved with the api
 clean_dictionary = {"latitude": [77.7777, 88.8888, 99.9999],
-                "harm_ev": [98, 99],
+                "harm_ev": [91, 93, 98, 99],
                 "man_coll": [98, 99],
                 "reljct1": [8, 9],
                 "reljct2": [98, 99],
                 "typ_int": [98, 99],
                 "weather": [98, 99],
                 "lgt_cond": [8, 9]}  # dictionary of column names with undefined values to be cleared from the data
+columns_description = {'weather': ['Clear',
+                                   'Rain',
+                                   'Sleet, Hail (Freezing Rain or Drizzle)',
+                                   'Snow',
+                                   'Fog, Smog, Smoke',
+                                   'Severe Crosswinds',
+                                   'Blowing Sand, Soil, Dirt',
+                                   'Other',
+                                   'Cloudy',
+                                   'Blowing Snow',
+                                   'Freezing Rain or Drizzle'],
+                       'month': ['',
+                                   '',
+                                   '']}

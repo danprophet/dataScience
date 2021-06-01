@@ -22,11 +22,11 @@ def create_merged_file():
     df2.to_csv(consts.data_file_path, index=False)  # cleans unused column
 
 
-def clear_undefined_values():
+def clear_undefined_values(df):
     """
+    :param: df - Dataframe
     This function clears rows from data frame according to consts.clean_dictionary
     """
-
-
-df = pd.DataFrame()
-df.drop
+    for key in consts.clean_dictionary:
+        for clean_value in consts.clean_dictionary[key]:
+            df.drop(df.index[df[key] == clean_value], inplace=True)
