@@ -1,8 +1,8 @@
 """This file reads all data, and then cleans the drop_columns columns from all data,
 Then combines all data to one file all_data_10-19.csv
 """
-
 import pandas as pd
+
 
 drop_columns = ['st_case',
                 'statename',
@@ -84,13 +84,13 @@ df = pd.read_csv("csv_files/Accidents_2010.csv")
 df.drop(drop_columns, axis='columns', inplace=True)
 df.to_csv('csv_files/all_data_10-19.csv')
 
-for i in range(8):
+for i in range(9):
     df = pd.read_csv("csv_files/Accidents_201{}.csv".format(i+1))
     df.drop(drop_columns, axis='columns', inplace=True)
     df.to_csv('csv_files/all_data_10-19.csv', mode='a', header=False)
     # print(df)
 
-
+# test print
 df2 = pd.read_csv("csv_files/all_data_10-19.csv")
 df2.drop(df2.columns[0], axis='columns', inplace=True)
 df2.to_csv('csv_files/all_data_10-19.csv', index=False)
