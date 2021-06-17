@@ -7,7 +7,7 @@
       <excludeFolder url="file://$MODULE_DIR$/.idea/pythonIterpreter" />
       <excludeFolder url="file://$MODULE_DIR$/.idea/pythonIterpreter1" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.8 (titani)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.8 (dataScience)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
