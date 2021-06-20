@@ -101,11 +101,139 @@ columns_description = {'weather': ['Clear',
                        'month': ['',
                                    '',
                                    ''],
-                       'fatals': [''],
+                        'fatals': [''],  # fatals have no categories
+                        'drunk_dr': [''],  # drunk drivers have no categories
                        'lgt_cond': ['daylight',
                                     'dark-not lighted',
                                     'dark-lighted',
                                     'dawn',
                                     'dust',
                                     'dark - unknown',
-                                    'other']}
+                                    'other'],
+                       'typ_int': ['Not an Intersection',
+                                   'Four-Way Intersection',
+                                   'T-Intersection',
+                                   'Y-Intersection',
+                                   'Traffic Circle',
+                                   'Roundabout',
+                                   'Five Point, or More',
+                                   '',
+                                   '',
+                                   'L-Intersection'],
+                       'reljct1': ['No',
+                                   'Yes',
+                                   '',  # not relevant
+                                   '',  # not relevant
+                                   '',  # not relevant
+                                   '',  # not relevant
+                                   '',  # not relevant
+                                   '',  # not relevant
+                                   'Not Reported',
+                                   'Reported as Unknown'],
+                       'reljct2': ['Non-Junction',
+                                   'Intersection',
+                                   'Intersection-Related',
+                                   'Driveway Access',
+                                   'Entrance/Exit Ramp Related',
+                                   'Railway Grade Crossing',
+                                   'Crossover-Related',
+                                   'Driveway Access Related',
+                                   '',
+                                   '',
+                                   '',
+                                   '',
+                                   '',
+                                   '',
+                                   '',
+                                   'Shared-Use Path Crossing',
+                                   'Acceleration/Deceleration Lane',
+                                   'Through Roadway',
+                                   'Other location within Interchange Area',
+                                   'Entrance/Exit Ramp'],
+                       'man_coll': ['The First Harmful Event was Not a Collision with a Motor Vehicle in Transport',
+                                    'Front-to-Rear ',
+                                    'Front-to-Front',
+                                    '',
+                                    '',
+                                    '',
+                                    'Angle',
+                                    'Sideswipe - Same Direction',
+                                    'Sideswipe - Opposite Direction',
+                                    'Rear-to-Side',
+                                    'Rear-to-Rear',
+                                    'Other'],
+                       'harm_ev' : ['Rollover/Overturn',  # 1
+                                    'Fire/Explosion',  # 2
+                                    'Immersion or Partial Immersion',  # 3
+                                    '',  # 4
+                                    'Immersion or Partial Immersion',  # 5
+                                    'Injured In Vehicle (Non-Collision)',  # 6
+                                    'Injured In Vehicle (Non-Collision)',  # 7
+                                    'Pedestrian',  # 8
+                                    'Pedalcyclist',  # 9
+                                    'Railway Vehicle',  # 10
+                                    'Live Animal',  # 11
+                                    'Motor Vehicle In-Transport',  # 12
+                                    '',  # 13
+                                    'Parked Motor Vehicle ',  # 14
+                                    'Non-Motorist on Personal Conveyance',  # 15
+                                    'Thrown or Falling Object',  # 16
+                                    'Boulder',  # 17
+                                    'Other Object (not fixed)',  # 18
+                                    'Building',  # 19
+                                    'Impact Attenuator/Crash Cushion',  # 20
+                                    'Bridge Pier or Support',  # 21
+                                    '',  # 22
+                                    'Bridge Rail (Includes parapet)',  # 23
+                                    'Guardrail Face',  # 24
+                                    'Concrete Traffic Barrier',  # 25
+                                    'Other Traffic Barrier',  # 26
+                                    '',  # 27
+                                    '',  # 28
+                                    '',  # 29
+                                    'Utility Pole/Light Support',  # 30
+                                    'Post, Pole or Other Supports',  # 31
+                                    'Culvert',  # 32
+                                    'Curb',  # 33
+                                    'Ditch',  # 34
+                                    'Embankment',  # 35
+                                    '',  # 36
+                                    '',  # 37
+                                    'Fence',  # 38
+                                    'Wall',  # 39
+                                    'Fire Hydrant',  # 40
+                                    'Shrubbery',  # 41
+                                    'Tree (Standing Only)',  # 42
+                                    'Other Fixed Object',  # 43
+                                    'Pavement Surface Irregularity (Ruts, Potholes, Grates, etc.)',  # 44
+                                    'Working Motor Vehicle ',  # 45
+                                    'Traffic Signal Support',  # 46
+                                    '',  # 47
+                                    'Snow Bank',  # 48
+                                    'Ridden Animal or Animal Drawn Conveyance',  # 49
+                                    'Bridge Overhead Structure',  # 50
+                                    'Jackknife (harmful to this vehicle)',  # 51
+                                    'Guardrail End',  # 52
+                                    'Mail Box',  # 53
+                                    'Motor Vehicle In-Transport Strikes or is Struck by Cargo, Persons or Objects Set-in-Motion from/by Another Motor Vehicle In Transport',  # 54
+                                    '',  # 55
+                                    '',  # 56
+                                    'Cable Barrier',  # 57
+                                    'Ground',  # 58
+                                    'Traffic Sign Support ',  # 59
+                                    '',  # 60
+                                    '',  # 61
+                                    '',  # 62
+                                    '',  # 63
+                                    '',  # 64
+                                    '',  # 65
+                                    '',  # 66
+                                    '',  # 67
+                                    '',  # 68
+                                    '',  # 69
+                                    '',  # 70
+                                    '',  # 71
+                                    'Cargo/Equipment Loss, Shift, or Damage [harmful]',  # 72
+                                    'Object That Had Fallen From Motor Vehicle In-Transport',  # 73
+                                    'Road Vehicle on Rails'  # 74
+                                    ]}
