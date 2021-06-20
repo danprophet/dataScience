@@ -52,8 +52,9 @@ def scatter_plot_graph_to_file(df, x_column, y_column):
     :param x_column: columns to be compared with base_column (average)
     :param y_column: columns to be compared with base_column (average)
     """
-    a=sns.scatterplot(x=x_column, y=y_column, s=7, data=df)
-    a.plot()
+    df.plot.scatter(x=x_column, y=y_column, alpha=0.5)
+    # a=sns.scatterplot(x=x_column, y=y_column, s=7, data=df)
+    # a.plot()
     # plt.show()
     plt.title("scatter plot - categorical_column {} vs. {}".format(x_column, y_column))
     plt.xlabel(x_column)
@@ -87,7 +88,73 @@ def pie_graph(df, column):
     :param df:
     :return:
     """
-    fig = plt.figure(figsize=(10,10))
-    df[column].value_counts().plot(kind='pie')
+    fig = plt.figure(figsize=(20, 20))
+    df[column].value_counts().plot(kind='pie', autopct="%.2f")
+    try:
+        plt.legend(consts.columns_description[column])
+    except Exception as e:
+        print("Column data not found. \n{}".format(e))
+
     plt.title("{} Pie Graph".format(column))
     plt.savefig('graphs/{}_graph_pie.png'.format(column))
+
+
+def general_overview(df, column):
+    """
+    This function generates general graph
+    :param df:
+    """
+    df.plot()
+    try:
+        plt.legend(consts.columns_description[column])
+    except Exception as e:
+        print("Column data not found. \n{}".format(e))
+
+    plt.title("{} General Graph".format(column))
+    plt.savefig('graphs/{}_graph_general_overview.png'.format(column))
+
+
+def general_overview_column(df, column):
+    """
+    This function generates general graph
+    :param df:
+    """
+    df[column].plot(figsize=(20, 20))
+    # df[column].plot()
+    try:
+        plt.legend(consts.columns_description[column])
+    except Exception as e:
+        print("Column data not found. \n{}".format(e))
+
+    plt.title("{} General Graph".format(column))
+    plt.savefig('graphs/{}_column_general_overview.png'.format(column))
+
+
+def box_graph(df):
+    """
+    This function generates general graph
+    :param df:
+    """
+    df.plot.box(figsize=(30, 15))
+    plt.title("General Box Graph")
+    plt.savefig('graphs/box_general_graph.png')
+
+
+def box_graph_column(df, column):
+    """
+    This function generates general graph
+    :param df:
+    """
+    df[column].plot.box(figsize=(10, 10))
+    plt.title("{} Box Graph".format(column))
+    plt.savefig('graphs/{}_box_graph.png'.format(column))
+
+
+def test(df, column):
+    """
+    This function generates general graph
+    :param df:
+    """
+    df[column].plot.kde()
+    plt.title("{} stacked Graph".format(column))
+    plt.savefig('graphs/{}_stacked_graph.png'.format(column))

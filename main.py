@@ -11,13 +11,20 @@ helper.clear_undefined_values(data)
 # graph_generator.average_graph_to_file(data, 'caseyear', ['fatals', 'weather'])  # caseyear vs fatals and weather
 # graph_generator.bar_graph_to_file(data, 'lgt_cond', 'caseyear')  # caseyear vs fatals
 # graph_generator.bar_graph_to_file(data, 'fatals', 'weather')  # caseyear vs fatals
+# graph_generator.scatter_plot_graph_to_file(data, 'fatals', 'weather')  # caseyear vs fatals
 
-# graph_generator.scatter_plot_graph_to_file(data, 'latitude', 'longitud')  # caseyear vs fatals
-graph_generator.pie_graph(data, 'weather')
-graph_generator.pie_graph(data, 'persons')
+#pie graphs:
+# graph_generator.pie_graph(data, 'weather')
+# graph_generator.pie_graph(data, 'persons')
+# graph_generator.pie_graph(data, 'state')
 
-# graph_generator.scatter_plot_graph_to_file(data, 'caseyear', 'persons', 'fatals')
+# graph_generator.scatter_plot_graph_to_file(data, 'drunk_dr', 'man_coll')
+# graph_generator.general_overview(data, 'Dataframe')
+# graph_generator.general_overview_column(data, 'lgt_cond')
 # graph_generator.graphYearVsCount(data)
+# graph_generator.box_graph(data)
+# graph_generator.box_graph_column(data, 'drunk_dr')
+graph_generator.test(data, 'drunk_dr')
 
 """
 What left to do:

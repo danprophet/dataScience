@@ -101,15 +101,15 @@ columns_description = {'weather': ['Clear',
                        'month': ['',
                                    '',
                                    ''],
-                        'fatals': [''],  # fatals have no categories
-                        'drunk_dr': [''],  # drunk drivers have no categories
+                        'fatals': [''],  # Fatals have no categories
+                        'drunk_dr': [''],  # Drunk drivers have no categories
                        'lgt_cond': ['daylight',
                                     'dark-not lighted',
                                     'dark-lighted',
                                     'dawn',
                                     'dust',
                                     'dark - unknown',
-                                    'other'],
+                                    'other'],  # Light Condition
                        'typ_int': ['Not an Intersection',
                                    'Four-Way Intersection',
                                    'T-Intersection',
@@ -119,7 +119,7 @@ columns_description = {'weather': ['Clear',
                                    'Five Point, or More',
                                    '',
                                    '',
-                                   'L-Intersection'],
+                                   'L-Intersection'],  # Type of Intersection
                        'reljct1': ['No',
                                    'Yes',
                                    '',  # not relevant
@@ -129,7 +129,7 @@ columns_description = {'weather': ['Clear',
                                    '',  # not relevant
                                    '',  # not relevant
                                    'Not Reported',
-                                   'Reported as Unknown'],
+                                   'Reported as Unknown'],  # Relation to Junction- Within Interchange Area
                        'reljct2': ['Non-Junction',
                                    'Intersection',
                                    'Intersection-Related',
@@ -149,7 +149,7 @@ columns_description = {'weather': ['Clear',
                                    'Acceleration/Deceleration Lane',
                                    'Through Roadway',
                                    'Other location within Interchange Area',
-                                   'Entrance/Exit Ramp'],
+                                   'Entrance/Exit Ramp'],  # Relation to Junction- Specific Location
                        'man_coll': ['The First Harmful Event was Not a Collision with a Motor Vehicle in Transport',
                                     'Front-to-Rear ',
                                     'Front-to-Front',
@@ -161,7 +161,7 @@ columns_description = {'weather': ['Clear',
                                     'Sideswipe - Opposite Direction',
                                     'Rear-to-Side',
                                     'Rear-to-Rear',
-                                    'Other'],
+                                    'Other'],  # Manner of Collision of the First Harmful Event
                        'harm_ev' : ['Rollover/Overturn',  # 1
                                     'Fire/Explosion',  # 2
                                     'Immersion or Partial Immersion',  # 3
@@ -236,7 +236,7 @@ columns_description = {'weather': ['Clear',
                                     'Cargo/Equipment Loss, Shift, or Damage [harmful]',  # 72
                                     'Object That Had Fallen From Motor Vehicle In-Transport',  # 73
                                     'Road Vehicle on Rails'  # 74
-                                    ],
+                                    ],  # First Harmful Event
                        'state': ['Alabama ',  # 1
                                  'Alaska ',  # 2
                                  'Arizona ',  # 4
@@ -289,5 +289,5 @@ columns_description = {'weather': ['Clear',
                                  'Washington',  # 53
                                  'West Virginia',  # 54
                                  'Wisconsin',  # 55
-                                 'Wyoming']}  # 56
+                                 'Wyoming']}  # States
 
