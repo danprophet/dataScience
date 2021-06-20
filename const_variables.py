@@ -78,6 +78,7 @@ drop_columns = ['st_case',
                 'cf2name',
                 'cf3',
                 'cf3name']  # list of columns to omit from the csv data retrieved with the api
+
 clean_dictionary = {"latitude": [77.7777, 88.8888, 99.9999],
                 "harm_ev": [91, 93, 98, 99],
                 "man_coll": [98, 99],
@@ -99,4 +100,12 @@ columns_description = {'weather': ['Clear',
                                    'Freezing Rain or Drizzle'],
                        'month': ['',
                                    '',
-                                   '']}
+                                   ''],
+                       'fatals': [''],
+                       'lgt_cond': ['daylight',
+                                    'dark-not lighted',
+                                    'dark-lighted',
+                                    'dawn',
+                                    'dust',
+                                    'dark - unknown',
+                                    'other']}
