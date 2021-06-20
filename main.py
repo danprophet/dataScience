@@ -8,7 +8,6 @@ import const_variables as consts
 data = pd.read_csv(consts.data_file_path)  # open Dataframe with combined data
 helper.clear_undefined_values(data)
 graph_generator.bar_graph_to_file(data, 'weather', 'caseyear')
-f
 
 """
 What left to do:
