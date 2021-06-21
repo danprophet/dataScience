@@ -126,8 +126,8 @@ def general_overview_column(df, column):
     This function generates general graph
     :param df:
     """
-    df[column].plot(figsize=(20, 20))
-    # df[column].plot()
+    # df[column].plot(figsize=(20, 20))
+    df[column].plot()
     try:
         plt.legend(consts.columns_description[column])
     except Exception as e:
