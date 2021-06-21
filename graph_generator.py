@@ -89,14 +89,21 @@ def pie_graph(df, column):
     :return:
     """
     fig = plt.figure(figsize=(20, 20))
-    df[column].value_counts().plot(kind='pie', autopct="%.2f")
+    try:
+        df[column].value_counts(sort=False).plot(kind='pie', autopct="%.2f", labels=consts.columns_description[column])
+        # print(df[column].value_counts(sort=False))
+        # print(df.set_index("state"))
+    except Exception as e:
+        df[column].value_counts().plot(kind='pie', autopct="%.2f", labels=None)
+
+
     try:
         plt.legend(consts.columns_description[column])
     except Exception as e:
         print("Column data not found. \n{}".format(e))
 
     plt.title("{} Pie Graph".format(column))
-    plt.savefig('graphs/{}_graph_pie.png'.format(column))
+    plt.savefig('graphs/pie/{}_graph_pie.png'.format(column))
 
 
 def general_overview(df, column):
@@ -127,7 +134,7 @@ def general_overview_column(df, column):
         print("Column data not found. \n{}".format(e))
 
     plt.title("{} General Graph".format(column))
-    plt.savefig('graphs/{}_column_general_overview.png'.format(column))
+    plt.savefig('graphs/general_overview_column/{}_column_general_overview.png'.format(column))
 
 
 def box_graph(df):
@@ -145,9 +152,12 @@ def box_graph_column(df, column):
     This function generates general graph
     :param df:
     """
-    df[column].plot.box(figsize=(10, 10))
-    plt.title("{} Box Graph".format(column))
-    plt.savefig('graphs/{}_box_graph.png'.format(column))
+    try:
+        df[column].plot.box(figsize=(10, 10))
+        plt.title("{} Box Graph".format(column))
+        plt.savefig('graphs/box/{}_box_graph.png'.format(column))
+    except Exception as e:
+        print(e)
 
 
 def test(df, column):
