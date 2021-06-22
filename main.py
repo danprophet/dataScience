@@ -8,7 +8,7 @@ import machine_learning
 # helper.create_merged_file()  # creates clean csv file
 data = pd.read_csv(consts.data_file_path)  # open Dataframe with combined data
 helper.clear_undefined_values(data)
-# data.to_csv("result_after_cleaning.csv")  # save the cleaned data to csv
+# data.to_csv("csv_files/result_after_cleaning.csv")  # save the cleaned data to csv
 
 # 2. Graph Generator:
 
