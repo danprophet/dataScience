@@ -1,44 +1,46 @@
 "This file will handle the machine learning part of the projectimport pandas as pd"
-"""
-Question: מתי במהלך היום יש את הכמות הגדולה ביותר של תאונות, וכך נוכל להזהיר נהגים.
-Q: באיזה חודשים יש את כמות התאונות הגדולה ביותר
-Q: השאלה המרכזית: בעקבות הנתונים שקיבלנו, נוציא אזהרה לנהגים 
-לשלב את זה בWAZE וברגע שמזהים שעה בעייתית להזהיר את הנהג
-"""
 
 ###Importing Libraries
 import pandas as pd
 from sklearn import datasets
-from sklearn.tree import DecisionTreeClassifier as DTC
+from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split as tts
 from sklearn import metrics
+from sklearn import tree
+import matplotlib.pyplot as plt
 
-###Importing Dataset
-iris = datasets.load_iris()
 
-###Constructing Data Frame
-a=pd.read_csv('result_after_cleaning.csv')
-data = pd.DataFrame(a)
-# print(data["species"])
+def create_prediction(data, columns1, column2):
+    ###Constructing Data Frame
+    decisionTree = tree.DecisionTreeClassifier()
 
-###Splitting train/test data
-x=data[['hour']]
-y=data["day_week"]
-X_tr, X_ts, y_tr, y_ts = tts(x, y, test_size=30/100, random_state=None)
+    ###Splitting train/test data
+    x=data[columns1]
+    y=data[column2]
+    X_tr, X_ts, y_tr, y_ts = tts(x, y, test_size=20/100, random_state=None)
 
-###Creating Decision Tree Classifier Model
-DT = DTC()
+    ###Creating Decision Tree Classifier Model
+    # DT = DTC()
+    decisionTree = decisionTree.fit(X_tr, y_tr)
+    fig, axes = plt.subplots(nrows = 1,ncols = 1,figsize = (30,30), dpi=600)
 
-###Training the Model
-DT.fit(X_tr,y_tr)
+    tree.plot_tree(decisionTree)
+    fig.savefig('machine_learning_trees/decision_tree_{}_to_{}.png'.format(columns1, column2))
+    #
+    ###Training the Model
+    decisionTree.fit(X_tr,y_tr)
 
-###Making Predictions
-y_pr=DT.predict(X_ts)
-print(y_pr)
+    ###Making Predictions
+    y_pr=decisionTree.predict(X_ts)
 
-###Evaluating Prediction Accuracy
-print("Acc %:",metrics.accuracy_score(y_ts, y_pr)*100)
+    ###Evaluating Prediction Accuracy
+    print("Acc %:", metrics.accuracy_score(y_ts, y_pr)*100)
 
-###Making Prediction with Foreign Data
-print(DT.predict([[1]]))
+    ###Making Prediction with Foreign Data
+    # while loop to make predictions:
+
+    # while True:
+    #     print("Enter {}".format(columns1))
+    #     decisionTree.predict(decisionTree, ['state', 'lgt_cond', 'hour'], ['fatals'])
+
 
