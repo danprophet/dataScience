@@ -45,7 +45,7 @@ helper.clear_undefined_values(data)
 
 
 ## 3. Machine Learning:
-machine_learning.create_prediction(data, ['month', 'state'], 'fatals')
+machine_learning.create_prediction(data, ['day','month', 'state', 'weather','lgt_cond'], 'fatals')
 # machine_learning.create_prediction(data, ['month', 'state', 'weather','lgt_cond'], 'harm_ev')
 
 
