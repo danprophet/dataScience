@@ -34,13 +34,26 @@ def create_prediction(data, columns1, column2):
     y_pr=decisionTree.predict(X_ts)
 
     ###Evaluating Prediction Accuracy
-    print("Acc %:", metrics.accuracy_score(y_ts, y_pr)*100)
+    print("Your Model Accuracy is %:", metrics.accuracy_score(y_ts, y_pr)*100)
 
     ###Making Prediction with Foreign Data
     # while loop to make predictions:
+    while True:
+        print("Do you want to predict? (Y/N)")
+        answer = input()
+        if answer == 'Y':
+            answer_vector = []
+            print("Please enter your data for predition:\n "
+                  "you should enter in the following format: {}".format(columns1))
+            for i in range(len(columns1)):
+                a = input()
+                answer_vector.append(a)
 
-    # while True:
-    #     print("Enter {}".format(columns1))
-    #     decisionTree.predict(decisionTree, ['state', 'lgt_cond', 'hour'], ['fatals'])
+            predictions = decisionTree.predict([answer_vector])  # send predictions
+
+            print("---------------\n Your prediction is: {}\n---------------".format(predictions))
+        else:
+            break  # Kill loop.
+
 
 
