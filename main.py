@@ -41,7 +41,7 @@ helper.clear_undefined_values(data)
 
 
 
-graph_generator.pie_graph(data, 'fatals')
+graph_generator.bar_graph_to_file(data, 'weather', 'man_coll')
 
 
 # ## 3. Machine Learning:

@@ -17,7 +17,7 @@ def bar_graph_to_file(df, column1, column2):
     :param column2: Y axis column
     """
     table = pd.crosstab(df[column2], df[column1])
-    table.plot(kind='bar', figsize=(10, 10))
+    table.plot(kind='bar', figsize=(20, 15))
     plt.title("{} vs. {}".format(column1, column2))
     plt.xlabel(column2)
     plt.ylabel(column1)
