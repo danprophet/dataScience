@@ -4,12 +4,12 @@ import pandas as pd
 import const_variables as consts
 import machine_learning
 
-# 1. Handle Data:
-helper.download_api_files()  # download the files from the API
-helper.create_merged_file()  # creates clean csv file
+# # 1. Handle Data:
+# helper.download_api_files()  # download the files from the API
+# helper.create_merged_file()  # creates clean csv file
 data = pd.read_csv(consts.data_file_path)  # open Dataframe with combined data
 helper.clear_undefined_values(data)  # clean empty or unnecessary values
-data.to_csv("csv_files/result_after_cleaning.csv")  # save the cleaned data to csv
+# data.to_csv("csv_files/result_after_cleaning.csv")  # save the cleaned data to csv
 
 # 2. Graph Generator:
 for key in consts.columns_description.keys():  # this code generates all pie graphs

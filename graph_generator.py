@@ -33,7 +33,7 @@ def scatter_plot_graph_to_file(df, x_column, y_column):
     :param x_column: columns to be compared with base_column (average)
     :param y_column: columns to be compared with base_column (average)
     """
-    df.plot.scatter(x=x_column, y=y_column, alpha=0.5)
+    df.plot.scatter(x=x_column, y=y_column, alpha=0.5, figsize=(200, 100))
     plt.title("scatter plot - categorical_column {} vs. {}".format(x_column, y_column))
     plt.xlabel(x_column)
     plt.ylabel(y_column)

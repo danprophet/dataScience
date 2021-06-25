@@ -23,7 +23,7 @@ def create_decision_tree(data):
                   "The possible columns in the database are:")
             for column in data.columns:
                 # Print list of columns with description
-                print('{} - {}'.format(column, (const.columns_description['columns'])[column]))
+                print('{} - {}'.format(column, (const.columns_dictionary[column])))
 
             for i in range(len(data.columns)):
                 columns_name = input()
@@ -40,7 +40,7 @@ def create_decision_tree(data):
                 if predict_column not in data.columns:
                     print("Columns does not exist, try again.")
                 else:
-                    print("You chose to use {} to preict {}. \n desicion tree execution stated...".format(columns_for_predictions, predict_column))
+                    print("You chose to use {} to preict {}. \nDesicion tree execution stated...\n".format(columns_for_predictions, predict_column))
                     create_prediction(data, columns_for_predictions, predict_column)
                     break
         else:
@@ -85,7 +85,13 @@ def create_prediction(data, columns1, column2):
         if answer == 'Y':
             answer_vector = []
             print("Please enter your data for predition:\n "
-                  "you should enter in the following format: {}".format(columns1))
+                  "you should enter in the following format: {}\nUse the digit id next to the description\n".format(columns1))
+            for col in columns1:
+                print('{} :'.format(col), end=" ")
+                for description in range(len(const.columns_description[col])):
+                    print('({}) - {}'.format(description, (const.columns_description[col])[description]), end=" ")
+                print("\n")
+
             for i in range(len(columns1)):
                 a = input()
                 answer_vector.append(a)
