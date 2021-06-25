@@ -1,5 +1,4 @@
 "This python file will handle processing csv data to different graphs"
-
 import pandas as pd
 import numpy as np
 import matplotlib as mpl
@@ -22,7 +21,6 @@ def bar_graph_to_file(df, column1, column2):
     plt.xlabel(column2)
     plt.ylabel(column1)
     plt.legend(consts.columns_description[column1])
-    # plt.show()
     plt.savefig('graphs/bar_graphs/{}_vs_{}.png'.format(column1, column2))
     plt.clf()
 
@@ -36,14 +34,9 @@ def scatter_plot_graph_to_file(df, x_column, y_column):
     :param y_column: columns to be compared with base_column (average)
     """
     df.plot.scatter(x=x_column, y=y_column, alpha=0.5)
-    # a=sns.scatterplot(x=x_column, y=y_column, s=7, data=df)
-    # a.plot()
-    # plt.show()
     plt.title("scatter plot - categorical_column {} vs. {}".format(x_column, y_column))
     plt.xlabel(x_column)
     plt.ylabel(y_column)
-    # plt.legend(categorical_column)
-    # plt.show()
     plt.savefig('graphs/scatter_plots/scatter_plot_{}_vs_{}.png'.format(x_column, y_column))
     plt.clf()
 
@@ -57,8 +50,6 @@ def pie_graph(df, column):
     fig = plt.figure(figsize=(30, 30))
     try:
         df[column].value_counts(sort=False).plot(kind='pie', autopct="%.2f", labels=consts.columns_description[column])
-        # print(df[column].value_counts(sort=False))
-        # print(df.set_index("state"))
     except Exception as e:
         df[column].value_counts().plot(kind='pie', autopct="%.2f", labels=None)
 

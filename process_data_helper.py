@@ -3,6 +3,24 @@ Then combines all data to one file all_data_10-19.csv
 """
 import pandas as pd
 import const_variables as consts
+import requests
+import os
+
+
+def download_api_files():
+    """
+    This function downloads the data files in csv format from NHTSA API, from years 2010 to 2019
+    """
+    try:
+        os.mkdir('csv_files/')
+    except Exception as e:
+        print("Folder already exists.")
+
+    for year in range(10):
+        url = 'https://crashviewer.nhtsa.dot.gov/CrashAPI/FARSData/GetFARSData?dataset=Accident&caseYear=201{}&format=csv'.format(year)
+        r = requests.get(url, allow_redirects=True)
+        file_name = 'csv_files/Accidents_201{}.csv'.format(year)
+        open(file_name, 'wb').write(r.content)
 
 
 def create_merged_file():
