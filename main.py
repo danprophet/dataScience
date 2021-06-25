@@ -11,7 +11,7 @@ data = pd.read_csv(consts.data_file_path)  # open Dataframe with combined data
 helper.clear_undefined_values(data)  # clean empty or unnecessary values
 data.to_csv("csv_files/result_after_cleaning.csv")  # save the cleaned data to csv
 
-# 2. Graph Generator - Comment this code you do not want to produce graphs, it takes time:
+# 2. Graph Generator - Comment this code if you do not want to produce graphs, it takes time:
 for key in consts.columns_description.keys():  # this code generates all pie graphs
     graph_generator.pie_graph(data, key)
 
