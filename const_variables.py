@@ -362,5 +362,25 @@ columns_description = {'weather': ['Clear',
                                  'Washington',  # 53
                                  'West Virginia',  # 54
                                  'Wisconsin',  # 55
-                                 'Wyoming']}  # States
+                                 'Wyoming'],
+                       'columns': {'caseyear': 'Years',
+                                   'state': 'State Number',
+                                   'peds': 'Number of Forms Submitted for Persons Not in Motor Vehicles',
+                                   'persons': 'Number of Forms Submitted for Persons in Motor Vehicles',
+                                   'day': 'Days',
+                                   'month': 'Months',
+                                   'year': 'Years',
+                                   'day_week': 'Days',
+                                   'hour': 'Hours',
+                                   'latitude': 'Latitude Coordinate',
+                                   'longitud': 'Longitude Coordinate',
+                                   'harm_ev': 'First Harmful Event',
+                                   'man_coll': 'Manner of Collision of the First Harmful Event',
+                                   'reljct1': 'Relation to Junction- Within Interchange Area',
+                                   'reljct2': 'Relation to Junction- Specific Location',
+                                   'typ_int': 'Type of Intersection',
+                                   'lgt_cond': 'Light Condition',
+                                   'weather': 'Weather',
+                                   'fatals': 'Fatals',
+                                   'drunk_dr': 'Number of Drinking Drivers'}}  # States
 
